@@ -1,6 +1,6 @@
 const navLinks = [
  {
-	id: "Brews",
+	id: "brews",
 	title: "Our Brews",
  },
  {
@@ -17,56 +17,56 @@ const navLinks = [
  },
 ];
 
-const cocktailLists = [
+const brewLists = [
  {
-	name: "Chapel Hill Shiraz",
-	country: "AU",
-	detail: "Battle",
-	price: "$10",
+	name: "Masala Chai",
+	country: "India",
+	detail: "Spiced black tea blend with milk and sugar",
+	price: "$5",
+ }, 
+{
+	name: "Mugicha - Barley Tea",
+	country: "Japan",
+	detail: "caffeine-free roasted barley infusion",
+	price: "$8",
  },
  {
-	name: "Caten Malbee",
-	country: "AU",
-	detail: "Battle",
-	price: "$49",
+	name: "Geisha Coffee",
+	country: "Panama / Ethiopia",
+	detail: "known for floral aroma and complex flavour",
+	price: "$30",
  },
  {
-	name: "Rhino Pale Ale",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Irish Guinness",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
+	name: "Kopi Luwak",
+	country: "Indonesia",
+	detail: "Civet-processed coffee",
+	price: "$129",
  },
 ];
 
-const mockTailLists = [
+const modernLists = [
  {
-	name: "Tropical Bloom",
-	country: "US",
-	detail: "Battle",
-	price: "$10",
+	name: "Bubble Tea / Boba",
+	country: "Taiwan",
+	detail: "Tea with tapioca pearls",
+	price: "$7",
  },
  {
-	name: "Passionfruit Mint",
-	country: "US",
-	detail: "Battle",
-	price: "$49",
+	name: "Matcha Latte",
+	country: "Japan",
+	detail: "green tea whisked with milk and sweetener",
+	price: "$7",
  },
  {
-	name: "Citrus Glow",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
+	name: "Nitro Cold Brew",
+	country: "USA",
+	detail: "Cold brew infused with nitrogen",
+	price: "$6",
  },
  {
-	name: "Lavender Fizz",
-	country: "IE",
-	detail: "600 ml",
+	name: "Flat White",
+	country: "Australia / New Zealand",
+	detail: "Espresso with steamed milk",
 	price: "$29",
  },
 ];
@@ -171,8 +171,8 @@ const sliderLists = [
 
 export {
  navLinks,
- cocktailLists,
- mockTailLists,
+ brewLists,
+ modernLists,
  profileLists,
  featureLists,
  goodLists,

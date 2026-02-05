@@ -22,8 +22,8 @@ const Hero = () => {
 
         gsap.from(heroSplit.chars, {    
             yPercent: 100,
-            duration: 1.3,
-            stagger: 0.09,
+            duration: 1.8,
+            stagger: 0.06,
             ease: "expo.out",
         });
 
@@ -60,7 +60,7 @@ const Hero = () => {
 
     return (
     <>
-        <section id="hero" className="noisy">
+        <section id="hero" className="back">
             <h1 className="title">WILD BEANS</h1>
 
             <div className="body">
@@ -76,7 +76,6 @@ const Hero = () => {
                         <p className="subtitles">
                             "I am a humble tea merchant, pouring out the elixir of life to the world."<br/> - Kakuzo Okakura.
                         </p>
-                        <a href="#Brews">Our Brews</a>
                     </div>
                 </div>
 
