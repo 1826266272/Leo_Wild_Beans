@@ -1,7 +1,7 @@
 import React from "react";
 import { navLinks } from "../../constants";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 
 const Navbar = () => {
@@ -24,7 +24,7 @@ const Navbar = () => {
     return (
     <nav>
         <div>
-            <a href="#home" className="flex items-center gap-2">
+            <a href="#hero" className="flex items-center gap-2">
                 <p>Cafe</p>
             </a>
             <ul>

@@ -2,7 +2,7 @@ import React from "react";
 import gsap from "gsap";
 import splitText from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
-import MediaQuery, { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 
 
 const Hero = () => {
@@ -23,7 +23,7 @@ const Hero = () => {
         gsap.from(heroSplit.chars, {    
             yPercent: 100,
             duration: 1.8,
-            stagger: 0.06,
+            stagger: 0.08,
             ease: "expo.out",
         });
 
@@ -66,7 +66,7 @@ const Hero = () => {
             <div className="body">
                 <div className="content">
                     <div className="space-y-5 hidden lg:block">
-                        <p>Brewed by</p>
+                        <p className="font-unical">Brewed by</p>
                         <p className="subtitles">
                            Classic Traditon
                         </p>
