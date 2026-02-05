@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Brews from "./components/Brews";
 import About from "./components/About";
+import Contact from "./components/Contact";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(scrollTrigger, splitText);
@@ -18,8 +19,9 @@ const App = () => {
       <Hero/>
       <Brews/>
       <About/>
+      <Contact/>
     </>
   )
 }
 
-export default App
+export default App;

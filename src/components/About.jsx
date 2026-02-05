@@ -6,7 +6,7 @@ import splitText from "gsap/SplitText";
 const About = () => {
     
     useGSAP(() => {
-        const titleSplit = splitText.create("#about h2,#about p",
+        const titleSplit = new splitText("#about h2,#about p",
         {
             type: "words"
         })
@@ -57,24 +57,24 @@ const About = () => {
         <div className="p-[20px]">
             <div className="top-grid">
                 <div className="md:col-span-3">
-                    <img src="/public/images/grid-4.png" alt="" />
+                    <img src="/images/grid-4.png" alt="" />
                 </div>
                 <div className="md:col-span-6">
-                    <img src="/public/images/grid-1.png" alt="" />
+                    <img src="/images/grid-1.png" alt="" />
                 </div>
                 <div className="md:col-span-3">
-                    <img src="/public/images/grid-3.jpg" alt="" />
+                    <img src="/images/grid-3.jpg" alt="" />
                 </div>
             </div>
             <div className="bottom-grid">
                 <div className="md:col-span-4">
-                    <img src="/public/images/grid-6.jpg" alt="" />
+                    <img src="/images/grid-6.jpg" alt="" />
                 </div>
                 <div className="md:col-span-4">
-                    <img src="/public/images/grid-2.png" alt="" />
+                    <img src="/images/grid-2.png" alt="" />
                 </div>
                 <div className="md:col-span-4">
-                    <img src="/public/images/grid-5.jpg" alt="" />
+                    <img src="/images/grid-5.jpg" alt="" />
                 </div>
             </div>
         </div>
