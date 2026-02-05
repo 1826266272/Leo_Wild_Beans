@@ -28,6 +28,10 @@ body {
     overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 @utility flex-center {
     @apply flex justify-center items-center;
 }
