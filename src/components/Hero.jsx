@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 
 const Hero = () => {
     const videoRef = React.useRef();
+    const heroRef = React.useRef();
 
     const isMobile = useMediaQuery({ maxWidth: 768 });
 
@@ -38,7 +39,7 @@ const Hero = () => {
         })
 
         const startValue = isMobile ? "top 50%" : "center 60%";
-        const endValue = isMobile ? "60% top" : "bottom top";
+        const endValue = isMobile ? "60% top" : "185% top";
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -56,10 +57,31 @@ const Hero = () => {
             })
         }
 
+        gsap.to(videoRef.current,{
+            x: isMobile ? "0%" : "25%",
+            scale: isMobile ? 1 : 0.6,
+            scrollTrigger: {
+                trigger: "#about",
+                start: "top bottom",
+                end: "top 60%",
+                scrub: true,
+                pin: false,
+            },
+        })
+
     }, []);
 
     return (
     <>
+        <div className="video absolute inset-0">
+            <video 
+            ref={videoRef}
+            src="/videos/output.mp4" 
+            muted 
+            playsInline 
+            preload="auto"
+            ></video>
+        </div>
         <section id="hero" className="back">
             <h1 className="title">WILD BEANS</h1>
 
@@ -82,14 +104,6 @@ const Hero = () => {
             </div>
 
         </section>
-        <div className="video absolute inset-0">
-            <video 
-            ref={videoRef}
-            src="/videos/output.mp4" 
-            muted 
-            playsInline 
-            preload="auto"></video>
-        </div>
     </>
   )
 }
