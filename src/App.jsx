@@ -1,27 +1,25 @@
 import React from "react";
-import { gsap } from "gsap";
-import scrollTrigger from "gsap/ScrollTrigger";
-import splitText from "gsap/SplitText";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Brews from "./components/Brews";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(scrollTrigger, splitText);
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
 
   return (
     <>
-      <Navbar/>
-      <Hero/>
-      <Brews/>
-      <About/>
-      <Contact/>
+      <Navbar />
+      <Hero />
+      <Brews />
+      <About />
+      <Contact />
     </>
-  )
-}
+  );
+};
 
 export default App;

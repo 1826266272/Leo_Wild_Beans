@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import splitText from "gsap/SplitText";
 
 const About = () => {
     
+    const sectionRef = useRef(null);
+    const contentRef = useRef(null);
+
     useGSAP(() => {
         const titleSplit = new splitText("#about h2,#about p",
         {
@@ -26,60 +29,92 @@ const About = () => {
             ypercent: 100,
             ease: "expo.out",
             stagger: 0.02
-        }).from(".top-grid, .bottom-grid", {
-            opacity: 0,
-            duration: 1,
-            stagger: 0.04,
-            ease: "power1.out"
-        }, "-=0.5")
+        })
+        
+        const section = sectionRef.current;
+        const content = contentRef.current;
+
+        const scrollWidth = content.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        const navLinks = document.getElementById("nav-links");
+
+        const horizontalAnim = gsap.to(content, {
+        x: -(scrollWidth - viewportWidth),
+        ease: "none",
+        scrollTrigger: {
+            trigger: section,
+            start: "top 10%",   
+            end: () => `+=${scrollWidth}`,
+            scrub: true,
+            pin: true,
+            onEnter: () => gsap.to(navLinks, { y: -80, opacity: 0 }),
+            onLeave: () => gsap.to(navLinks, { y: 0, opacity: 1 }),     
+            onEnterBack: () => gsap.to(navLinks, { y: -80, opacity: 0 }),
+            onLeaveBack: () => gsap.to(navLinks, { y: 0, opacity: 1 }),
+            },
+        });
+
+        gsap.utils.toArray(".card img").forEach((img) => {
+            gsap.from(img, {
+                opacity: 0,
+                y: 40,
+                scale: 0,
+                duration: 0.5,
+                ease: "power1.out",
+                scrollTrigger: {
+                    trigger: img,
+                    start: "top 90%",
+                    containerAnimation: horizontalAnim,
+                    scrub: true,
+                },
+            });
+        });
 
     }, []);
 
     return (
-    <section id="about" className="relative">
-        <div className="mb-16 md:px-0 px-5">
-            <div className="content">
-                <div className="p-[20px] md:col-span-8">
-                    <p className="badge">Best Cafe</p>
-                    <h2>
-                        Our Priority lies in the <span className=" text-yellow">Taste OF Tradition</span>
-                    </h2>
-                    <p>
-                        To Blend our tradition with every sip,
-                        that Savour the essence of authentic trip!
-                        To celebrate our ethical coffee drip,
-                        Crafted and brewed to perfection cup!
-                        We prioritize maintaining high standards and quality while minimizing costs.
-                    </p>
+        <>
+            <section id="about" className="relative">
+                <div className="mb-16 md:px-0 px-5">
+                    <div className="content">
+                        <div className="p-[20px] md:col-span-8">
+                            <p className="badge">Best Cafe</p>
+                            <h2>
+                                Our Priority lies in the <span className=" text-yellow">Taste OF Tradition</span>
+                            </h2>
+                            <p>
+                                To Blend our tradition with every sip,
+                                that Savour the essence of authentic trip!
+                                To celebrate our ethical coffee drip,
+                                Crafted and brewed to perfection cup!
+                                We prioritize maintaining high standards and quality while minimizing costs.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div className="p-[20px]">
-            <div className="top-grid">
-                <div className="md:col-span-3">
-                    <img src="/images/grid-4.png" alt="" />
-                </div>
-                <div className="md:col-span-6">
-                    <img src="/images/grid-1.png" alt="" />
-                </div>
-                <div className="md:col-span-3">
-                    <img src="/images/grid-3.jpg" alt="" />
-                </div>
-            </div>
-            <div className="bottom-grid">
-                <div className="md:col-span-4">
-                    <img src="/images/grid-6.jpg" alt="" />
-                </div>
-                <div className="md:col-span-4">
-                    <img src="/images/grid-2.png" alt="" />
-                </div>
-                <div className="md:col-span-4">
-                    <img src="/images/grid-5.jpg" alt="" />
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
+            <section id="h-scroll" ref={sectionRef}>
+                <div className="p-[20px]">
+                    <div className="h-scroll-content flex gap-10 items-center" ref={contentRef}>
+                        <h1><span>From Cultivation to your Cup</span></h1>
+                        
+                        <div className="card" id="card-1">
+                            <img src="/images/h-1.jpg" alt="image" />
+                        </div>
+                        <div className="card" id="card-2">
+                            <img src="/images/h-2.jpg" alt="image" />
+                        </div>
+                        <div className="card" id="card-3">
+                            <img src="/images/grid-1.png" alt="image" />
+                        </div>
+                        <div className="card" id="card-4">
+                            <img src="/images/h-4.jpg" alt="image" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
   )
 }
 
