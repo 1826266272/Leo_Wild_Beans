@@ -38,7 +38,7 @@ const About = () => {
         const viewportWidth = window.innerWidth;
         const navLinks = document.getElementById("nav-links");
 
-        const horizontalAnim = gsap.to(content, {
+        const horizontalAnim = gsap.to(content  , {
         x: -(scrollWidth - viewportWidth),
         ease: "none",
         scrollTrigger: {
@@ -57,15 +57,14 @@ const About = () => {
         gsap.utils.toArray(".card img").forEach((img) => {
             gsap.from(img, {
                 opacity: 0,
-                y: 40,
-                scale: 0,
-                duration: 0.5,
-                ease: "power1.out",
+                y: 100,
+                ease: "none",
                 scrollTrigger: {
                     trigger: img,
-                    start: "top 90%",
-                    containerAnimation: horizontalAnim,
+                    start: "left 90%",
+                    end: "left 70%",
                     scrub: true,
+                    containerAnimation: horizontalAnim,
                 },
             });
         });
@@ -107,9 +106,6 @@ const About = () => {
                         </div>
                         <div className="card" id="card-3">
                             <img src="/images/grid-1.png" alt="image" />
-                        </div>
-                        <div className="card" id="card-4">
-                            <img src="/images/h-4.jpg" alt="image" />
                         </div>
                     </div>
                 </div>

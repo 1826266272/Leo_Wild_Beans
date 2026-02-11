@@ -215,16 +215,13 @@ body {
     }
 
     #card-1 img {
-        @apply top-[50%] left-[30%];
+        @apply top-[60%] left-[40%];
     }
     #card-2 img {
-        @apply top-0 left-[90%];
+        @apply top-0 left-[120%];
     }
     #card-3 img {
-        @apply top-[55%] left-[160%];
-    }
-    #card-4 img {
-        @apply top-0 left-[220%];
+        @apply top-[60%] left-[195%];
     }
 
     h1 {
