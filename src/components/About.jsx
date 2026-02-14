@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import splitText from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const About = () => {
     
@@ -17,8 +18,8 @@ const About = () => {
         const at = gsap.timeline({
             scrollTrigger: {
                 trigger: "#about",
-                start: "top 50%",
-                end: "center center",
+                start: "top 60%",
+                end: "center 70%",
                 scrub: true
             }
         })
@@ -26,47 +27,30 @@ const About = () => {
         at.from(titleSplit.words, {
             opacity: 0,
             duration: 1,
-            ypercent: 100,
             ease: "expo.out",
-            stagger: 0.02
+            stagger: 0.06,
         })
         
         const section = sectionRef.current;
         const content = contentRef.current;
-
-        const scrollWidth = content.scrollWidth;
-        const viewportWidth = window.innerWidth;
         const navLinks = document.getElementById("nav-links");
 
-        const horizontalAnim = gsap.to(content  , {
-        x: -(scrollWidth - viewportWidth),
-        ease: "none",
-        scrollTrigger: {
-            trigger: section,
-            start: "top 10%",   
-            end: () => `+=${scrollWidth}`,
-            scrub: true,
+        ScrollTrigger.create( {
+            trigger: content,
+            start: "top 15%",
+            end: `+=900vh`,
+            scrub: 1,
             pin: true,
+            onUpdate: (self) => {  gsap.to(content, {
+                x: `${-350 * self.progress}vw`,
+                duration: 0.5,
+                ease: "power3.out",
+            })              
+            },
             onEnter: () => gsap.to(navLinks, { y: -80, opacity: 0 }),
             onLeave: () => gsap.to(navLinks, { y: 0, opacity: 1 }),     
             onEnterBack: () => gsap.to(navLinks, { y: -80, opacity: 0 }),
             onLeaveBack: () => gsap.to(navLinks, { y: 0, opacity: 1 }),
-            },
-        });
-
-        gsap.utils.toArray(".card img").forEach((img) => {
-            gsap.from(img, {
-                opacity: 0,
-                y: 100,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: img,
-                    start: "left 90%",
-                    end: "left 70%",
-                    scrub: true,
-                    containerAnimation: horizontalAnim,
-                },
-            });
         });
 
     }, []);
@@ -93,9 +77,8 @@ const About = () => {
                 </div>
             </section>
 
-            <section id="h-scroll" ref={sectionRef}>
-                <div className="p-[20px]">
-                    <div className="h-scroll-content flex gap-10 items-center" ref={contentRef}>
+            <section id="h-scroll relative" ref={sectionRef}>
+                    <div className="h-scroll-content" ref={contentRef}>
                         <h1><span>From Cultivation to your Cup</span></h1>
                         
                         <div className="card" id="card-1">
@@ -108,7 +91,6 @@ const About = () => {
                             <img src="/images/grid-1.png" alt="image" />
                         </div>
                     </div>
-                </div>
             </section>
         </>
   )

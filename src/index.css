@@ -181,7 +181,7 @@ body {
     }
 
     #about {
-        @apply py-18 2xl:px-0 px-5 container mx-auto;
+        @apply relative py-18 2xl:px-0 px-5 container mx-auto;
 
         .content {
             @apply grid grid-cols-1 lg:grid-cols-12 gap-5;
@@ -202,11 +202,11 @@ body {
     }
 
     .h-scroll-content {
-        @apply flex items-center gap-20 h-full;
+        @apply flex items-center h-full w-full will-change-transform;
     }
 
     .card {
-        @apply rounded-[20px] overflow-hidden shrink-0;
+        @apply rounded-[20px] overflow-hidden;
         
     }
 
