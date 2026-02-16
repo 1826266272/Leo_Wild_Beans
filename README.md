@@ -1,7 +1,11 @@
 # ☕ Leo Wild Beans
 
+---
+
 A modern animated coffee shop landing page built with **React**, **GSAP ScrollTrigger**, and **TailwindCSS**.
 This project focuses on smooth scroll-based storytelling, responsive UI design, and performance-friendly animations.
+
+![Preview](./public/preview1.png)
 
 ---
 
@@ -18,22 +22,6 @@ https://leo-wild-beans.vercel.app
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-0F172A?style=for-the-badge\&logo=tailwind-css\&logoColor=38BDF8)
 ![GSAP](https://img.shields.io/badge/GSAP-0AE448?style=for-the-badge\&logo=greensock\&logoColor=black)
 ![JavaScript](https://img.shields.io/badge/JavaScript-000000?style=for-the-badge\&logo=javascript\&logoColor=F7DF1E)
-
----
-
-## 📸 Preview
-
-Add screenshots inside `/public` folder:
-
-```
-public/preview1.png
-public/preview2.png
-```
-
-Then they will display here:
-
-![Preview](./public/preview1.png)
-![Animation](./public/preview2.png)
 
 ---
 
@@ -54,9 +42,9 @@ Then they will display here:
 Leo_Wild_Beans
 │
 ├── public
+│   └── assets
 ├── src
 │   ├── components
-│   ├── sections
 │   └── App.jsx
 │
 ├── index.html
@@ -101,5 +89,4 @@ npm run dev
 ## 👨‍💻 Author
 
 **Sethu**
-Engineering Student
 Frontend Developer in progress 🚀
