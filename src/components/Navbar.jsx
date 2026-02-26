@@ -24,8 +24,8 @@ const Navbar = () => {
 
     return (
     <nav>
-        <div>
-            <a href="#hero" className="flex items-center gap-2">
+        <div id="nav-links">
+            <a href="#hero" id="cafe-title" className="flex items-center gap-2">
                 <p>Cafe</p>
             </a>
             <ul>

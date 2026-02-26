@@ -51,6 +51,13 @@ body {
     color: transparent;
 }
 
+@utility bw-text-gradient {
+    background: linear-gradient(to bottom, #ca896d, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+}
+
 @utility radial-gradient {
     background: radial-gradient(
             circle at center,
@@ -69,7 +76,7 @@ body {
         @apply fixed z-50 w-full p-[20px];
 
         div {
-            @apply flex md:flex-row flex-col md:justify-between items-center gap-5 py-5 lg:px-0 px-5 container mx-auto;
+            @apply flex md:flex-row flex-col md:justify-between items-center gap-5  lg:py-5 px-0 container mx-auto;
         }
 
         p {
@@ -97,7 +104,7 @@ body {
         @apply relative z-10 min-h-dvh w-full border border-transparent;
 
         h1 {
-            @apply md:mt-32 mt-40 text-8xl md:text-[18vw] leading-none text-center font-modern-negra;
+            @apply md:mt-32 mt-40 md:text-[18vw] text-6xl leading-none text-center font-modern-negra;
         }
 
         .body {
@@ -174,12 +181,8 @@ body {
     }
 
     #about {
-        @apply min-h-screen py-28 2xl:px-0 px-5 container mx-auto;
+        @apply relative py-18 2xl:px-0 px-5 container mx-auto;
 
-        .noisy img{
-            background-image: url("/public/images/noise.png");
-            z-index: -1;
-        }
         .content {
             @apply grid grid-cols-1 lg:grid-cols-12 gap-5;
 
@@ -192,29 +195,37 @@ body {
             @apply inline-block rounded-full bg-white text-black px-4 py-2 text-sm font-medium mb-8;
         }
 
-        .top-grid {
-            @apply grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5;
 
-            > div {
-                @apply rounded-3xl overflow-hidden h-72 relative;
-            }
+    }
+   #h-scroll {
+        @apply bg-black w-full h-screen overflow-hidden;
+    }
 
-            img {
-                @apply object-cover w-full h-full;
-            }
-        }
+    .h-scroll-content {
+        @apply flex items-center h-full w-full will-change-transform;
+    }
 
-        .bottom-grid {
-            @apply grid grid-cols-1 md:grid-cols-12 gap-5 md:px-0 px-5;
+    .card {
+        @apply rounded-[20px] overflow-hidden;
+        
+    }
 
-            > div {
-                @apply rounded-3xl overflow-hidden h-72 relative;
-            }
+    .card img {
+        @apply absolute md:w-[300px] md:h-[200px] w-[100px] h-[70px] rounded-[20px] object-cover shrink-0;;
+    }
 
-            img {
-                @apply object-cover w-full h-full;
-            }
-        }
+    #card-1 img {
+        @apply top-[60%] left-[40%];
+    }
+    #card-2 img {
+        @apply top-0 left-[120%];
+    }
+    #card-3 img {
+        @apply top-[60%] left-[195%];
+    }
+
+    h1 {
+        @apply text-white text-[25vw] font-modern-negra whitespace-nowrap shrink-0;
     }
 
     #contact {
