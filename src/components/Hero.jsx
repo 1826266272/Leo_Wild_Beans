@@ -19,6 +19,12 @@ const Hero = () => {
 
         heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
+        gsap.from(videoRef.current, {
+            opacity : 0,
+            duration: 3,
+            ease: "power1.inOut",
+        });
+
         gsap.from(heroSplit.chars, {    
             yPercent: 100,
             duration: 1.8,
@@ -29,11 +35,10 @@ const Hero = () => {
         gsap.from(paragraphSplit.lines, {
             yPercent: 100,
             opacity: 0,
-            duration: 1.8,
+            duration: 2,
             ease: "expo.out",
             delay: 1,
             stagger: 0.06,
-
         })
 
         const startValue = isMobile ? "top 50%" : "center 60%";
