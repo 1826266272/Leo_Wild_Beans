@@ -12,7 +12,7 @@ const Brews = () => {
         const lt = gsap.timeline({
             scrollTrigger: {
                 trigger: "#brews",
-                start: "top 300%",
+                start: "top 100%",
                 end: "center top",
                 scrub: true
             }
@@ -21,7 +21,7 @@ const Brews = () => {
         const mt = gsap.timeline({
             scrollTrigger: {
                 trigger: "#brews",
-                start: "top 300%",
+                start: "top 100%",
                 end: "center top",
                 scrub: true
             }
@@ -36,7 +36,7 @@ const Brews = () => {
             opacity: 0,
             duration: 1.5,
             ease: "expo.out",
-            delay: 3.5,
+            delay: 1,
             stagger: 0.15,
         });
 
@@ -49,7 +49,7 @@ const Brews = () => {
             opacity: 0,
             duration: 1.5,
             ease: "expo.out",
-            delay: 3.5,
+            delay: 1,
             stagger: 0.15,
         });
 

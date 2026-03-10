@@ -38,7 +38,7 @@ const Hero = () => {
             duration: 2,
             ease: "expo.out",
             delay: 1,
-            stagger: 0.06,
+            stagger: 0.1,
         })
 
         const startValue = isMobile ? "top 50%" : "center 60%";
