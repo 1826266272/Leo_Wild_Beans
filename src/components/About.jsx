@@ -18,7 +18,7 @@ const About = () => {
         const at = gsap.timeline({
             scrollTrigger: {
                 trigger: "#about",
-                start: "top center",
+                start: "top 60%",
                 end: "bottom 80%",
                 scrub: true
             }
@@ -28,7 +28,7 @@ const About = () => {
             opacity: 0,
             duration: 1,
             ease: "expo.out",
-            stagger: 0.06,
+            stagger: 0.08,
         })
         
         const section = sectionRef.current;
@@ -67,10 +67,12 @@ const About = () => {
                             </h2>
                             <p>
                                 To Blend our tradition with every sip,
-                                that Savour the essence of authentic trip!
+                                That Savour the essence of authentic trip!
                                 To celebrate our ethical coffee drip,
                                 Crafted and brewed to perfection cup!
                                 We prioritize maintaining high standards and quality while minimizing costs.
+                                From farm to cup, our journey never slips,
+                                Serving moments of comfort in every blissful sip.
                             </p>
                         </div>
                     </div>

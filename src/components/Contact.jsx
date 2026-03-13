@@ -14,17 +14,17 @@ const Contact = () => {
         const ct = gsap.timeline({
             scrollTrigger: {
                 trigger: "#contact",
-                start: "top 60%",
-                end: "center 40%",
+                start: "top 70%",
+                end: "center center",
                 scrub: true
             }
         })
 
         ct.from(contactSplit.lines, {
             opacity: 0,
-            ypercent: 100,
+            yPercent: -100,
             scrub: true,
-            stagger: 0.04,
+            stagger: 0.08,
             duration: 1,
             ease: "power1.out"
         })

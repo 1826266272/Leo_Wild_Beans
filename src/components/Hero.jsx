@@ -19,27 +19,30 @@ const Hero = () => {
 
         heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
-        gsap.from(videoRef.current, {
-            opacity : 0,
-            duration: 3,
-            ease: "power1.inOut",
-        });
-
-        gsap.from(heroSplit.chars, {    
+        var htl = gsap.timeline();
+        
+        htl.from(heroSplit.chars, {    
             yPercent: 100,
-            duration: 1.8,
+            opacity: 0,
+            duration: 1.5,
+            delay: 0.5,
             stagger: 0.08,
             ease: "expo.out",
         });
-
-        gsap.from(paragraphSplit.lines, {
-            yPercent: 100,
+        
+        htl.from(paragraphSplit.lines, {
+            yPercent: 20,
             opacity: 0,
-            duration: 2,
+            duration: 1.5,
             ease: "expo.out",
-            delay: 1,
-            stagger: 0.1,
-        })
+            stagger: 0.08,
+        },"-=1");
+        
+        htl.from(videoRef.current, {
+            opacity : 0,
+            duration: 2,
+            ease: "power1.inOut",
+        },"-=1.5");
 
         const startValue = isMobile ? "top 50%" : "center 60%";
         const endValue = isMobile ? "270% top" : "180% top";

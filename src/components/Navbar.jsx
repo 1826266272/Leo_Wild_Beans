@@ -6,6 +6,16 @@ import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
     useGSAP(() => {
+
+        var ntl = gsap.timeline();
+        
+        ntl.from("#nav-links", {
+            yPercent: -100,
+            opacity: 0,
+            duration: 1.5,
+            ease: "expo.out",
+        });
+
         const navTween = gsap.timeline({
             scrollTrigger: {
                 trigger: "nav",
