@@ -1,5 +1,4 @@
 import { useGSAP } from "@gsap/react";
-import React from "react";
 import splitText from "gsap/SplitText.js";
 import gsap from "gsap";
 import { socials } from "../../constants";
@@ -33,6 +32,7 @@ const Contact = () => {
     }, []);
 
     return(
+        <>
         <section id="contact">
             <div className="content">
                 <div className="font-great text-sm">
@@ -61,6 +61,7 @@ const Contact = () => {
                 </div>
             </div>
         </section>
+        </>
     )
 }
 

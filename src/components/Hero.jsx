@@ -19,14 +19,14 @@ const Hero = () => {
 
         heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
-        var htl = gsap.timeline();
+        const htl = gsap.timeline();
         
         htl.from(heroSplit.chars, {    
-            yPercent: 100,
+            yPercent: 80,
             opacity: 0,
-            duration: 1.5,
+            duration: 1,
             delay: 0.5,
-            stagger: 0.08,
+            stagger: 0.05,
             ease: "expo.out",
         });
         
@@ -40,12 +40,12 @@ const Hero = () => {
         
         htl.from(videoRef.current, {
             opacity : 0,
-            duration: 2,
+            duration: 1.8,
             ease: "power1.inOut",
         },"-=1.5");
 
         const startValue = isMobile ? "top 50%" : "center 60%";
-        const endValue = isMobile ? "270% top" : "180% top";
+        const endValue = isMobile ? "bottom -85%" : "bottom -60%";
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -90,7 +90,6 @@ const Hero = () => {
         </div>
         <section id="hero" className="back">
             <h1 className="title">WILD BEANS</h1>
-
             <div className="body">
                 <div className="content">
                     <div className="space-y-5 hidden lg:block">
@@ -106,9 +105,7 @@ const Hero = () => {
                         </p>
                     </div>
                 </div>
-
             </div>
-
         </section>
     </>
   )
