@@ -13,23 +13,23 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
 const imageArray = [
-  "/public/images/comment1.png",
-  "/public/images/comment2.png",
-  "/public/images/comment3.png",
-  "/public/images/comment4.png",
-  "/public/images/comment5.png",
-  "/public/images/comment6.png",
-  "/public/images/comment7.png",
-  "/public/images/comment8.png",
-  "/public/images/comment9.png",
-  "/public/images/comment-10.png",
-  "/public/images/comment11.png",
-  "/public/images/comment12.png",
-  "/public/images/comment13.png",
-  "/public/images/comment14.png",
-  "/public/images/comment15.png",
-  "/public/images/comment16.png",
-  "/public/images/comment17.png",
+  "/images/comment1.png",
+  "/images/comment2.png",
+  "/images/comment3.png",
+  "/images/comment4.png",
+  "/images/comment5.png",
+  "/images/comment6.png",
+  "/images/comment7.png",
+  "/images/comment8.png",
+  "/images/comment9.png",
+  "/images/comment-10.png",
+  "/images/comment11.png",
+  "/images/comment12.png",
+  "/images/comment13.png",
+  "/images/comment14.png",
+  "/images/comment15.png",
+  "/images/comment16.png",
+  "/images/comment17.png",
 ];
 
 
@@ -42,8 +42,8 @@ const App = () => {
       <Brews />
       <About />
       <InstagramCard 
-        image="/public/images/post.jpg"
-        profileImage="/public/images/logo.png"
+        image="/images/post.jpg"
+        profileImage="/images/logo.png"
         isVerified={true}
         username="Cafe-Wild_Beans"
         timestamp="Just Now"
