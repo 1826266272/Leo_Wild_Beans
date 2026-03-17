@@ -44,8 +44,7 @@ const App = () => {
       <InstagramCard 
         image="/images/post.jpg"
         profileImage="/images/logo.png"
-        isVerified={true}
-        username="Cafe-Wild_Beans"
+        username="Cafe-Wild-Beans"
         timestamp="Just Now"
         images = { imageArray } 
       />

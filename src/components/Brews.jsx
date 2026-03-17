@@ -12,8 +12,8 @@ const Brews = () => {
         const lt = gsap.timeline({
             scrollTrigger: {
                 trigger: "#brews",
-                start: "top 100%",
-                end: "center top",
+                start: "top 90%",
+                end: "center 40%",
                 scrub: true
             }
         })
@@ -21,8 +21,8 @@ const Brews = () => {
         const mt = gsap.timeline({
             scrollTrigger: {
                 trigger: "#brews",
-                start: "top 100%",
-                end: "center top",
+                start: "top 90%",
+                end: "center 40%",
                 scrub: true
             }
         })
@@ -32,9 +32,9 @@ const Brews = () => {
         });
 
         lt.from(popularSplit.lines, {
-            yPercent: 100,
+            yPercent: 40,
             opacity: 0,
-            duration: 1.5,
+            duration: 1,
             ease: "expo.out",
             delay: 1,
             stagger: 0.15,
@@ -45,9 +45,9 @@ const Brews = () => {
         });
 
         mt.from(modernSplit.lines, {
-            yPercent: 100,
+            yPercent: 40,
             opacity: 0,
-            duration: 1.5,
+            duration: 1,
             ease: "expo.out",
             delay: 1,
             stagger: 0.15,

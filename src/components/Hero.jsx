@@ -68,8 +68,8 @@ const Hero = () => {
             scale: isMobile ? 0.4 : 0.6,
             scrollTrigger: {
                 trigger: "#about",
-                start: "top bottom",
-                end: "top 70%",
+                start: "top 80%",
+                end: "top 50%",
                 scrub: true,
                 pin: false,
             },
