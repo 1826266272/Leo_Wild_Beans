@@ -7,7 +7,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const InstagramCard = (props) => {
     const sectionRef = useRef(null);
     const commentIconRef = useRef(null);
-    const flowContainerRef = useRef(null);
     const [showDetails, setShowDetails] = useState(false);
 
     useGSAP(() => {
@@ -105,7 +104,7 @@ const InstagramCard = (props) => {
 
     if(showDetails){
         return (
-            <div ref={flowContainerRef} className="h-screen w-full bg-black overflow-hidden flex items-center justify-center" style={{ perspective: "1200px" }}>
+            <div className="h-screen w-full bg-black overflow-hidden flex items-center justify-center" style={{ perspective: "1200px" }}>
                 {/* <button 
                     onClick={() => setShowDetails(false)} 
                     className="absolute top-10 left-10 z-50 text-white font-bold bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 transition-all"
@@ -240,10 +239,8 @@ const InstagramCard = (props) => {
             </div>
 
             {/* Change the Review div from w-1/3 to w-1/2 */}
-            <div className="Review relative flex h-full md:w-1/2 items-center justify-center p-10 overflow-hidden">
-                <div className='Header flex items-star whitespace-nowrap'>
-                    <h1 className='md:text-6xl text-4xl font-bold '>Click on the <span className='text-yellow'>Comment</span> Section</h1>
-                </div>
+            <div className="Review relative flex h-3/4 md:w-1/2 items-center justify-center mt-6 p-10">
+                <h1 className='md:max-w-3xl max-w-md md:text-6xl text-4xl font-bold whitespace-normal'>Click on the <span className='text-yellow'>Comment</span> Section to view all reviews</h1>
             </div>
         </section>
         </>
