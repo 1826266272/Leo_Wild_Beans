@@ -25,7 +25,7 @@ const Hero = () => {
             yPercent: 80,
             opacity: 0,
             duration: 1,
-            delay: 0.5,
+            delay: 1,
             stagger: 0.05,
             ease: "expo.out",
         });
@@ -36,7 +36,7 @@ const Hero = () => {
             duration: 1.5,
             ease: "expo.out",
             stagger: 0.08,
-        },"-=1");
+        },"-=0.5");
         
         htl.from(videoRef.current, {
             opacity : 0,
